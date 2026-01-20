@@ -1,0 +1,48 @@
+# Reusable workflow: Notify dependent repos when a package is released
+# Usage: Copy to each package repo's .github/workflows/
+
+name: Release Notification
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  notify-dependents:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger dependent repository updates
+        env:
+          GH_TOKEN: ${{ secrets.CROSS_REPO_TOKEN }}
+        run: |
+          # Get the released package name from the repo
+          PACKAGE_NAME="${{ github.event.repository.name }}"
+          VERSION="${{ github.event.release.tag_name }}"
+
+          echo "Released: ${PACKAGE_NAME} ${VERSION}"
+
+          # Define dependency relationships
+          declare -A DEPENDENTS
+          DEPENDENTS["cdl-parser"]="crystal-geometry cdl-lsp gemmology-plugin gemmology.dev"
+          DEPENDENTS["crystal-geometry"]="crystal-renderer gemmology-plugin"
+          DEPENDENTS["mineral-database"]="gemmology-plugin gemmology.dev"
+          DEPENDENTS["crystal-renderer"]="cdl-lsp gemmology-plugin gemmology.dev"
+
+          # Trigger updates in dependent repos
+          for dependent in ${DEPENDENTS[$PACKAGE_NAME]}; do
+            echo "Notifying: ${dependent}"
+            gh api -X POST \
+              "repos/gemmology-dev/${dependent}/dispatches" \
+              -f event_type="dependency-updated" \
+              -f client_payload="{\"package\":\"${PACKAGE_NAME}\",\"version\":\"${VERSION}\"}" \
+              || echo "  Warning: Could not notify ${dependent}"
+          done
+
+          # Special case: mineral-database releases trigger website DB update
+          if [[ "${PACKAGE_NAME}" == "mineral-database" ]]; then
+            echo "Triggering website database update..."
+            gh api -X POST \
+              "repos/gemmology-dev/gemmology.dev/dispatches" \
+              -f event_type="mineral-database-released" \
+              -f client_payload="{\"version\":\"${VERSION}\"}"
+          fi
