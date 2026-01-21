@@ -6,12 +6,12 @@ Crystal visualization and gemmological reference tools aligned with the FGA (Gem
 
 | Package | Description | Docs | PyPI |
 |---------|-------------|------|------|
-| [cdl-parser](https://github.com/gemmology-dev/cdl-parser) | Crystal Description Language parser | [Docs](https://cdl-parser.gemmology.dev) | [![PyPI](https://img.shields.io/pypi/v/cdl-parser)](https://pypi.org/project/cdl-parser/) |
-| [crystal-geometry](https://github.com/gemmology-dev/crystal-geometry) | 3D geometry engine for crystals & twins | [Docs](https://crystal-geometry.gemmology.dev) | [![PyPI](https://img.shields.io/pypi/v/crystal-geometry)](https://pypi.org/project/crystal-geometry/) |
-| [mineral-database](https://github.com/gemmology-dev/mineral-database) | SQLite database with 46+ mineral presets | [Docs](https://mineral-database.gemmology.dev) | [![PyPI](https://img.shields.io/pypi/v/mineral-database)](https://pypi.org/project/mineral-database/) |
-| [crystal-renderer](https://github.com/gemmology-dev/crystal-renderer) | SVG/STL/glTF visualization export | [Docs](https://crystal-renderer.gemmology.dev) | [![PyPI](https://img.shields.io/pypi/v/crystal-renderer)](https://pypi.org/project/crystal-renderer/) |
-| [cdl-lsp](https://github.com/gemmology-dev/cdl-lsp) | Language Server for IDE support | [Docs](https://cdl-lsp.gemmology.dev) | [![PyPI](https://img.shields.io/pypi/v/cdl-lsp)](https://pypi.org/project/cdl-lsp/) |
-| [gemmology-knowledge](https://github.com/gemmology-dev/gemmology-knowledge) | FGA curriculum documentation | [Docs](https://knowledge.gemmology.dev) | - |
+| [cdl-parser](https://github.com/gemmology-dev/cdl-parser) | Crystal Description Language parser | [![Docs](https://img.shields.io/badge/docs-live-green)](https://cdl-parser.gemmology.dev) | [![PyPI](https://img.shields.io/pypi/v/gemmology-cdl-parser)](https://pypi.org/project/gemmology-cdl-parser/) |
+| [crystal-geometry](https://github.com/gemmology-dev/crystal-geometry) | 3D geometry engine for crystals & twins | [![Docs](https://img.shields.io/badge/docs-live-green)](https://crystal-geometry.gemmology.dev) | [![PyPI](https://img.shields.io/pypi/v/gemmology-crystal-geometry)](https://pypi.org/project/gemmology-crystal-geometry/) |
+| [mineral-database](https://github.com/gemmology-dev/mineral-database) | SQLite database with 94+ mineral presets | [![Docs](https://img.shields.io/badge/docs-live-green)](https://mineral-database.gemmology.dev) | [![PyPI](https://img.shields.io/pypi/v/gemmology-mineral-database)](https://pypi.org/project/gemmology-mineral-database/) |
+| [crystal-renderer](https://github.com/gemmology-dev/crystal-renderer) | SVG/STL/glTF visualization export | [![Docs](https://img.shields.io/badge/docs-live-green)](https://crystal-renderer.gemmology.dev) | [![PyPI](https://img.shields.io/pypi/v/gemmology-crystal-renderer)](https://pypi.org/project/gemmology-crystal-renderer/) |
+| [cdl-lsp](https://github.com/gemmology-dev/cdl-lsp) | Language Server for IDE support | [![Docs](https://img.shields.io/badge/docs-live-green)](https://cdl-lsp.gemmology.dev) | [![PyPI](https://img.shields.io/pypi/v/gemmology-cdl-lsp)](https://pypi.org/project/gemmology-cdl-lsp/) |
+| [gemmology-knowledge](https://github.com/gemmology-dev/gemmology-knowledge) | FGA curriculum documentation | [![Docs](https://img.shields.io/badge/docs-live-green)](https://knowledge.gemmology.dev) | - |
 
 ## Quick Links
 
@@ -36,7 +36,7 @@ trigonal[-3m]:{10-10}@1.0 + {10-11}@0.8  # Quartz prism with pyramids
 pip install gemmology-plugin
 
 # Individual packages
-pip install cdl-parser crystal-geometry mineral-database crystal-renderer
+pip install gemmology-cdl-parser gemmology-crystal-geometry gemmology-mineral-database gemmology-crystal-renderer
 ```
 
 ## Contributing
