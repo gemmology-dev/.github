@@ -18,7 +18,9 @@ Crystal visualization and gemmological reference tools aligned with the FGA (Gem
 - [Main Website](https://gemmology.dev) - Documentation hub
 - [CDL Playground](https://gemmology.dev/playground) - Interactive crystal editor
 - [Crystal Gallery](https://gemmology.dev/gallery) - Browse mineral presets
-- [FGA Curriculum](https://knowledge.gemmology.dev) - Study materials
+- [Learn](https://gemmology.dev/learn) - FGA curriculum-aligned content
+- [Quiz & Exams](https://gemmology.dev/quiz) - Test your gemmology knowledge
+- [Calculator Tools](https://gemmology.dev/tools) - SG, RI, birefringence calculators
 
 ## What is CDL?
 
